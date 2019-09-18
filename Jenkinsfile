@@ -1,7 +1,6 @@
 node {
      timestamps {
       stage('Git clone') {
-         deleteDir()
          checkout scm
      }
     stage('build') {
