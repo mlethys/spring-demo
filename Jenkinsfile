@@ -1,5 +1,6 @@
 node {
-     stage('Git clone') {
+     timestamps {
+      stage('Git clone') {
          deleteDir()
          checkout scm
      }
@@ -9,4 +10,5 @@ node {
      stage('save tests raports') {
        junit '**/target/surefire-reports/TEST-*.xml'
     }
+     }  
 }
