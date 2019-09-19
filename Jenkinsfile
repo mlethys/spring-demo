@@ -9,5 +9,8 @@ node {
      stage('save tests raports') {
        junit '**/target/surefire-reports/TEST-*.xml'
     }
+    stage('build docker') {
+        sh 'mvn compile jib:dockerBuild'
+    }
      }  
 }
