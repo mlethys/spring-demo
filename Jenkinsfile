@@ -10,7 +10,7 @@ node {
        junit '**/target/surefire-reports/TEST-*.xml'
     }
     stage('build docker') {
-        sh "eval $(minikube docker-env)
+        sh "eval '$(minikube docker-env)'
             mvn compile jib:dockerBuild"
     }
      }  
